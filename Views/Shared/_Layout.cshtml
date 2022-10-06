@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" src="~/images/favicon.ico" />
+    <title>แจ้งงานฝ่ายสารสนเทศ  - GFPT </title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="~/assets/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/custom.css" rel="stylesheet" />
+    <!-- You can change the theme colors from here -->
+    <link href="~/css/blue.css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="~/assets/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+  
+
+    @RenderSection("Css", required: false)
+
+
+</head>
+
+<body class="fix-header card-no-border logo-center">
+    <div id="spin">
+        <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+    </div>
+    <div id="main-wrapper">
+        <header class="topbar"> 
+             <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <div class="navbar-collapse">
+                    <ul class="navbar-nav ml-0 mt-md-0">
+                        <li class="nav-item"> <a style="font-size:22px !important" class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
+                    </ul>
+                    <ul class="navbar-nav mr-auto mt-md-0">
+                        <li class="nav-item"> <a href="#" class="nav-link dropdown-toggle text-muted waves-effect waves-dark">ระบบ แจ้งงานฝ่ายสารสนเทศ </a> </li>
+                    </ul>
+                    <ul class="navbar-nav my-lg-0">
+                        <li class="nav-item"> <a href="#" class="nav-link dropdown-toggle text-muted waves-effect waves-dark">ผู้ใช้ระบบ : @ViewBag.UserLogIn</a> </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <aside class="left-sidebar">
+            <div class="scroll-sidebar">
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="nav-small-cap">PERSONAL</li>
+                        <li>
+                            <a asp-action="Index" asp-controller="Home" aria-expanded="false">หน้าโปรแกรม </a>
+                        </li>
+
+                        <li>
+                            <a href="@ViewData["Manual"]" target="_blank" class="has-arrow waves-effect waves-dark" aria-expanded="false">คู่มือการใช้งาน</a>
+                        </li>
+                        <li>
+                            <a href="@ViewData["Permiss"]" target="_blank" class="has-arrow waves-effect waves-dark" aria-expanded="false">สิทธิ์การใช้งาน</a>
+                        </li>
+                        <li>
+                            <a href="@ViewData["Doc"]" target="_blank" class="has-arrow waves-effect waves-dark" aria-expanded="false">เอกสารนำเสนอ</a>
+                        </li>
+
+
+
+
+
+
+
+
+
+                        <li class="nav-small-cap">FORMS, TABLE &amp; WIDGETS</li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+       
+        <div class="page-wrapper p-t-0">
+            <div class="container-fluid">
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center">
+                        <h3 class="text-themecolor"></h3>
+                    </div>
+                </div>
+
+                <div class="alert alert-warning" id="WarrningIE" style=" display: none; ">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button>
+                    <h3 class="text-warning"><i class="fa fa-exclamation-triangle"></i> Warning</h3> เพื่อประสิทธิภาพในการใช้งาน กรุณาใช้
+                    <span> Google Chrome,</span>
+                    <span onclick="OpenEdge()" style=" color: #007bff; text-decoration: none; cursor: pointer; ">Microsoft Edge</span> ในการใช้งาน Application
+                </div>
+                @RenderBody()
+                <a href="javascript:" id="return-to-top" class="boxShadow-ta"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+            </div>
+            <footer class="footer">
+                © GFPT Application 2022.06.15
+            </footer>
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <script src="~/assets/plugins/bootstrap/js/popper.min.js"></script>
+    <script src="~/assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <script src="~/assets/plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="~/js/gfpt.js"></script>
+    <script src="~/assets/plugins/moment/moment.js"></script>
+    <script src="~/assets/plugins/moment/min/moment-with-locales.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/autoNumeric/dist/autoNumeric.js"></script>
+    <script src="~/js/custom.js"></script>
+    <script src="~/js/jquery.slimscroll.js"></script>
+    <script src="~/js/sidebarmenu.js"></script>
+    <script src="~/assets/plugins/bootstrap/js/bootstrap.js"></script>
+    <script src="~/js/Reject.js"></script>
+
+
+    @RenderSection("Scripts", required: false)
+
+    
+    <script>
+        function OpenEdge() {
+            var linkpage ="microsoft-edge:" + window.location.href;
+            window.open(linkpage);
+
+        } 
+        var URL = '@ViewBag.URL';
+        function BtnArrow(obj, id) {
+          let btnUp = '<i class="fa fa-chevron-circle-up"></i>';
+            let btnDown = '<i class="fa fa-chevron-circle-down"></i>';
+          var ElID = "#" + id;
+         $(ElID).slideToggle("slow");
+            $(obj).find('span').html(function (_, value) { return value == btnUp ? btnDown : btnUp });
+        }
+        function renumberRows(idtbal) {
+            var id = '#' + idtbal + '  tr';
+            $(id).each(function (index, el) {
+                $(this).children('td').first().text(function (i, t) {
+                    return index++;
+                });
+            });
+        }
+         jQuery('.numbersOnly').keyup(function () {
+            this.value = this.value.replace(/[^0-9\.]/g, '');
+        });
+
+        $("body").delegate(".numbersOnlyDelegate", "keyup", function () {
+            this.value = this.value.replace(/[^0-9\.]/g, '');
+        });
+           function sorting(sort, curentsort) {
+               ShowLoading(); 
+                 switch (curentsort) {
+                       case "asc": 
+                         $("#currentSort").val("desc");
+                           break;
+                       case "desc":
+                         $("#currentSort").val("asc");
+                           break;
+                       default:
+                         $("#currentSort").val("asc");
+                   }  
+            $("#sorting").val(sort); 
+            $("#frm").submit();
+        }
+
+        function deleterow(row, idtbal) {
+             $.when($(row).closest('tr').remove()).then(renumberRows(idtbal));
+        }
+        function Home() {
+            var link = '@Url.Action("Index","Home")';
+            $("#spin").show();
+            window.location.href = link;
+        }
+        function isNumeric(n) { return !isNaN(parseFloat(n)) && isFinite(n); }
+        function isCheckIE() {
+            ua = navigator.userAgent;
+            var is_ie = ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
+            return is_ie;
+        }
+
+
+        $(document).ready(function () {
+            if (isCheckIE()) {
+                $("#WarrningIE").show();
+            }
+            $.ajaxSetup({ cache:false });
+            $(".fix-header .topbar").stick_in_parent({});
+            if ('@TempData["Error"]' != '') {
+                PopupMessage('@TempData["Error"]');
+            } else if ('@TempData["MSG"]' != '') {
+                PopupMessage('@TempData["MSG"]');
+            }
+        });
+        $(window).on("load", function (e) { $("#spin").hide(); });
+        $(window).scroll(function() {
+                if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(200);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+                }
+        });
+        $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+        });
+
+    </script>
+
+</body>
+
+</html>
+
+ 
