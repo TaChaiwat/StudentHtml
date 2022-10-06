@@ -33,3 +33,4 @@ C:\StudentHtml\obj\Debug\netcoreapp3.0\StudentHtml.Views.pdb
 C:\StudentHtml\obj\Debug\netcoreapp3.0\StudentHtml.dll
 C:\StudentHtml\obj\Debug\netcoreapp3.0\StudentHtml.pdb
 C:\StudentHtml\obj\Debug\netcoreapp3.0\StudentHtml.csproj.CopyComplete
+C:\StudentHtml\obj\Debug\netcoreapp3.0\Razor\Views\WorkingTime\List.cshtml.g.cs
