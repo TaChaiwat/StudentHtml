@@ -1,28 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Workingtimes\\StudentHtml\\StudentHtml.csproj": {}
+    "C:\\StudentHtml\\StudentHtml.csproj": {}
   },
   "projects": {
-    "D:\\Workingtimes\\StudentHtml\\StudentHtml.csproj": {
+    "C:\\StudentHtml\\StudentHtml.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Workingtimes\\StudentHtml\\StudentHtml.csproj",
+        "projectUniqueName": "C:\\StudentHtml\\StudentHtml.csproj",
         "projectName": "StudentHtml",
-        "projectPath": "D:\\Workingtimes\\StudentHtml\\StudentHtml.csproj",
-        "packagesPath": "C:\\Users\\student01-gfpt\\.nuget\\packages\\",
-        "outputPath": "D:\\Workingtimes\\StudentHtml\\obj\\",
+        "projectPath": "C:\\StudentHtml\\StudentHtml.csproj",
+        "packagesPath": "C:\\Users\\chaiwat-pong\\.nuget\\packages\\",
+        "outputPath": "C:\\StudentHtml\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\student01-gfpt\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\chaiwat-pong\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -56,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.423\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }
