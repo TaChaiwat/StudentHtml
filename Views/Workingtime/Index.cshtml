@@ -1,0 +1,391 @@
+<div class="card-body">
+    <div class="row">
+        <div class="col-12">
+            <div class="card card-outline-info">
+                <div class="card-header">
+                    <h4 class="m-b-0 text-white">
+                        บันทึกเวลาการผลิต
+                    </h4>
+                </div>
+
+                <form method="get" id="frmSearch" action="/gfpt/QD/DC/DocumentControl/DocumentControl">
+                    <div class="card-body">
+                        <div class="row form-group">
+                            <div class="col-1 text-right">
+                                ShopOrder
+                            </div>
+                            <div class="col-5">
+                                <select id="expiredStatus" name="expiredStatus" class="form-control"
+                                    data-style="form-control btn-secondary">
+                                    <option value="">2701221025</option>
+                                </select>
+                            </div>
+                            <div class="col-1 text-right">
+                                สินค้า
+                            </div>
+                            <div class="col-5">
+                                <select id="expiredStatus" name="expiredStatus" class="form-control"
+                                    data-style="form-control btn-secondary">
+                                    <option value="">CHICKEN BONELESS THIGH FROZEN</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-1 text-right">
+                                หน่วย
+                            </div>
+
+                            <div class="col-5">
+                                <select id="documentTypeID" name="documentTypeID" class="form-control"
+                                    data-style="form-control btn-secondary">
+                                    <option value="">5330 : คิริมิ</option>
+                                </select>
+                            </div>
+
+                            <div class="col-1 text-right">
+                                สายพาน
+                            </div>
+
+                            <div class="col-5">
+                                <select id="departmentID" name="departmentID" class="form-control"
+                                    data-style="form-control btn-secondary">
+                                    <option value="R1">R1</option>
+                                    <option value="R2">R2</option>
+                                    <option value="R3">R3</option>
+                                    <option value="S1">S1</option>
+                                    <option value="S2">S2</option>
+                                    <option value="S2">S3</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <center>
+                            <div class="col-2">
+                                <button type="submit" id="btnSearch" name="btnSearch" class="btn btn-info"
+                                    value="search">ค้นหา</button>
+                                <button class="btn btn-danger" type="button" data-toggle="modal"
+                                    data-target="#btnAddtime">เพิ่มเวลา</button>
+                            </div>
+                        </center>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table color-bordered-table info-bordered-table">
+                <thead style="text-align: center;">
+                    <tr>
+                        <th>#</th>
+                        <th>ShopOrder</th>
+                        <th>สินค้า</th>
+                        <th>หน่วยงาน</th>
+                        <th>สายพาน</th>
+                        <th>เวลาเริ่มต้น</th>
+                        <th>เวลาสิ้นสุด</th>
+                        <th>แก้ไข</th>
+                    </tr>
+                </thead>
+                <tbody style="text-align: center;">
+                    <tr>
+                        <td></td>
+                        <td>2701221025</td>
+                        <td>CHICKEN BONELESS THIGH FROZEN</td>
+                        <td>5330 : คิริมิ</td>
+                        <td>R1</td>
+                        <td>10:06</td>
+                        <td>12:06</td>
+                        <td>
+                            <button class="btn btn-danger" type="button" data-toggle="modal"
+                                data-target="#edit">แก้ไข</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<div id="btnAddtime" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
+    aria-labelledby="myLargeModalLabel" style="display: none;" data-backdrop="static" data-keyboard="false"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-info">
+                    <h4 class="modal-title text-white">เพิ่มเวลา</h4>
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <form method="get" id="frmSearch" action="/gfpt/QD/DC/DocumentControl/DocumentControl">
+                                <div class="card-body">
+                                    <div class="row form-group">
+                                        <div class="col-1 text-right">
+                                            ShopOrder
+                                        </div>
+                                        <div class="col-5">
+                                            <select id="expiredStatus" name="expiredStatus" class="form-control"
+                                                data-style="form-control btn-secondary">
+                                                <option value="">2701221025</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-1 text-right">
+                                            สินค้า
+                                        </div>
+                                        <div class="col-5">
+                                            <select id="expiredStatus" name="expiredStatus" class="form-control"
+                                                data-style="form-control btn-secondary">
+                                                <option value="">CHICKEN BONELESS THIGH FROZEN</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-1 text-right">
+                                            หน่วย
+                                        </div>
+
+                                        <div class="col-5">
+                                            <select id="documentTypeID" name="documentTypeID" class="form-control"
+                                                data-style="form-control btn-secondary">
+                                                <option value="">5330 : คิริมิ</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-1 text-right">
+                                            สายพาน
+                                        </div>
+
+                                        <div class="col-5">
+                                            <select id="departmentID" name="departmentID" class="form-control"
+                                                data-style="form-control btn-secondary">
+                                                <option value="R1">R1</option>
+                                                <option value="R2">R2</option>
+                                                <option value="R3">R3</option>
+                                                <option value="S1">S1</option>
+                                                <option value="S2">S2</option>
+                                                <option value="S2">S3</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-1 text-right">
+                                            เวลาเริ่มต้น
+                                        </div>
+
+                                        <div class="col-5">
+                                            <div class="input-group clockpicker">
+                                                <input type="text" class="form-control" value="09:30">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text"><i class="fa fa-clock-o"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-1 text-right">
+                                            เวลาสิ้นสุด
+                                        </div>
+
+                                        <div class="col-5">
+                                            <div class="input-group clockpicker " data-placement="bottom"
+                                                data-align="top" data-autoclose="true">
+                                                <input type="text" class="form-control" value="13:14">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text"><i class="fa fa-clock-o"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <center>
+                                        <div class="col-2">
+                                            <button type="submit" id="btnSearch" name="btnSearch" class="btn btn-info"
+                                                value="search">บันทึก</button>
+                                            <button type="button" class="btn btn-outline-danger"
+                                                data-dismiss="modal">ปิด</button>
+                                        </div>
+                                    </center>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="edit" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    style="display: none;" data-backdrop="static" data-keyboard="false" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-info">
+                    <h4 class="modal-title text-white">แก้ไข</h4>
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <form method="get" id="frmSearch" action="/gfpt/QD/DC/DocumentControl/DocumentControl">
+                                <div class="card-body">
+                                    <div class="row form-group">
+                                        <div class="col-1 text-right">
+                                            ShopOrder
+                                        </div>
+                                        <div class="col-5">
+                                            2701221025
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-1 text-right">
+                                            หน่วยงาน
+                                        </div>
+                                        <div class="col-5">
+                                            5330 : คิริมิ
+                                        </div>
+                                        <div class="col-1 text-right">
+                                            สายพาน
+                                        </div>
+                                        <div class="col-5">
+                                            R1
+                                        </div>
+                                        <br>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-1 text-right">
+                                            รหัส/ชื่อ
+                                        </div>
+                                        <div class="col-5">
+                                            <input class="form-control" type="text" value="" id="example-text-input">
+                                        </div>
+                                        <div class="col-3">
+                                            <button type="submit" id="btnSearch" name="btnSearch" class="btn btn-info"
+                                                value="search">ค้นหา</button>
+                                            <button type="button" class="btn btn-outline-danger"
+                                                data-dismiss="modal">ปิด</button>
+                                        </div>
+                                    </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table color-bordered-table info-bordered-table">
+                            <thead style="text-align: center;">
+                                <tr>
+                                    <th>#</th>
+                                    <th>รหัสพนักงาน</th>
+                                    <th>ชื่อสินค้า</th>
+                                    <th>หน่วยงาน</th>
+                                    <th>สายพาน</th>
+                                    <th>เวลาเริ่มต้น</th>
+                                    <th>เวลาสิ้นสุด</th>
+                                    <th>แก้ไข</th>
+                                </tr>
+                            </thead>
+                            <tbody style="text-align: center;">
+                                <tr>
+                                    <td></td>
+                                    <td>C109398</td>
+                                    <td>น.ส. PHAL SENG</td>
+                                    <td>5330 : คิริมิ</td>
+                                    <td>R1</td>
+                                    <td>10:06</td>
+                                    <td>12:06</td>
+                                    <td>
+                                        <button class="btn btn-danger" type="button" data-toggle="modal"
+                                            data-target="#edittime">แก้ไข</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="edittime" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
+    aria-labelledby="myLargeModalLabel" style="display: none;" data-backdrop="static" data-keyboard="false"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-info">
+                    <h4 class="modal-title text-white">แก้ไขเวลา</h4>
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <form method="get" id="frmSearch" action="/gfpt/QD/DC/DocumentControl/DocumentControl">
+                                <div class="card-body">
+                                    <div class="row form-group">
+                                        <div class="col-1 text-right">
+                                            รหัส/ชื่อพนักงาน
+                                        </div>
+                                        <div class="col-3 text-right">
+                                            C109398-น.ส. PHAL SENG
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-1 text-right">
+                                            เวลาเริ่มต้น
+                                        </div>
+
+                                        <div class="col-5">
+                                            <div class="input-group clockpicker">
+                                                <input type="text" class="form-control" value="09:30">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text"><i class="fa fa-clock-o"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-1 text-right">
+                                            เวลาสิ้นสุด
+                                        </div>
+
+                                        <div class="col-5">
+                                            <div class="input-group clockpicker " data-placement="bottom"
+                                                data-align="top" data-autoclose="true">
+                                                <input type="text" class="form-control" value="13:14">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text"><i class="fa fa-clock-o"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <center>
+                                        <div class="col-12">
+                                            <button type="submit" id="btnSearch" name="btnSearch" class="btn btn-info"
+                                                value="search">บันทึก</button>
+                                            <button type="button" class="btn btn-outline-danger"
+                                                data-dismiss="modal">ปิด</button>
+                                        </div>
+                                    </center>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
