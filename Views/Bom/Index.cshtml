@@ -37,11 +37,9 @@
                                             <div class="col-3">
                                                 <button type="submit" id="btnSearch" name="btnSearch"
                                                     class="btn btn-info" value="search">ค้นหา</button>
-                                                <button class="btn btn-danger" data-toggle="modal"
+                                                <button class="btn btn-danger" type="button" data-toggle="modal"
                                                     data-target="#popupSignature">เพิ่ม RM/Loss</button>
-
                                             </div>
-
                                         </div>
 
                                     </div>
@@ -60,14 +58,14 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @* <tr>
-                                                    <td>1</td>
-                                                    <td>Nigam</td>
-                                                    <td>Eichmann</td>
-                                                    <td>Rogahn</td>
-
-                                                    </tr> *@
-
+                                                <tr>
+                                                    <td></td>
+                                                    <td>2701221025</td>
+                                                    <td>046707061 : KARAAGE (NAKATSU FUU SHOYU) W/P RD </td>
+                                                    <td>500</td>
+                                                    <td>ภายนอกบริษัท</td>
+                                                    <td>บริษัท จีเอฟพีที จำกัด (มหาชน)</td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
@@ -77,11 +75,9 @@
                     </div>
                 </div>
             </div>
-
             <div class="tab-pane p-20" id="profile" role="tabpanel">2</div>
         </div>
     </div>
-
 </div>
 
 <div id="popupSignature" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
@@ -92,17 +88,47 @@
             <div class="modal-content">
                 <div class="modal-header bg-info">
                     <h4 class="modal-title text-white">บันทึกสินค้า BOM</h4>
-                    <button type="button" class="close text-white" data-dismiss="modal" aria-hidden="true">×</button>
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-hidden="true">x</button>
                 </div>
-                <div class="modal-body">
+                <!-- BODY -->
+                <div class="card-body">
                     <div class="row">
-                        <div class="col-12 text-center">
-                            <img id="ImageEmp" src="/gfpt/QD/DC/DocumentControl/Home/RenderSignature"
-                                style="width:450px;height:220px; pointer-events:none;">
+                        <div class="col-12">
+                            <form method="get" id="frmSearch" action="">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <div class="text-right">
+                                                สินค้า :
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            
+                                        </div>
+                                        <div class="col-3">
+                                            <button type="submit" id="btnSearch" name="btnSearch" class="btn btn-info"
+                                                value="search">ค้นหา</button>
+                                        </div>
+                                        <div class="col-1">
+                                            <div class="text-right">
+                                                สินค้า :
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            
+                                        </div>
+                                        <div class="col-3">
+                                            <button type="submit" id="btnSearch" name="btnSearch" class="btn btn-info"
+                                                value="search">ค้นหา</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </form>
                         </div>
+                        
                     </div>
                 </div>
-
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-danger" data-dismiss="modal">ปิด</button>
                 </div>
