@@ -1,4 +1,7 @@
-<style>
+
+
+ 
+    <style>
     .disableA {
         pointer-events: none;
         color: #9da6ab;
@@ -58,14 +61,8 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>2701221025</td>
-                                                    <td>046707061 : KARAAGE (NAKATSU FUU SHOYU) W/P RD </td>
-                                                    <td>500</td>
-                                                    <td>ภายนอกบริษัท</td>
-                                                    <td>บริษัท จีเอฟพีที จำกัด (มหาชน)</td>
-                                                </tr>
+ 
+                                                
                                             </tbody>
                                         </table>
                                     </div>
@@ -75,10 +72,158 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane p-20" id="profile" role="tabpanel">2</div>
+            <div class="tab-pane p-20" id="profile" role="tabpanel">
+                <div class="col-12">
+                    <form method="get" id="frmSearch" action="">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-1">
+                                    <div class="text-right">
+                                        สินค้า :
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <select id="documentTypeID" name="documentTypeID" class="form-control"
+                                        data-style="form-control btn-secondary">
+                                        <option value="">2701221025-KARAAGE (NAKATSU FUU SHOYU) W/P RD</option>
+                                    </select>
+                                </div>
+                                <div class="col-3">
+                                    <button class="btn btn-info" type="button" data-toggle="modal"
+                                        data-target="#">ค้นหา</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table color-bordered-table info-bordered-table">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>ชื่อสินค้า</th>
+                                        <th>ชื่อประเภท</th>
+                                        <th>จำนวน</th>
+                                        <th>หมายเหตุ</th>
+                                        <th>แก้ไข</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td>046707061 : KARAAGE (NAKATSU FUU SHOYU) W/P RD</td>
+                                        <td>Reject ต้นทาง kk</td>
+                                        <td>0</td>
+                                        <td></td>
+                                        <td>
+                                            <div class="col-1">
+                                                <button class="btn btn-info" type="button" data-toggle="modal"
+                                                    data-target="#CorrectTypeBom">แก้ไข</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>046707061 : KARAAGE (NAKATSU FUU SHOYU) W/P RD</td>
+                                        <td>Reject ปลายทาง kk</td>
+                                        <td>0</td>
+                                        <td></td>
+                                        <td>
+                                            <div class="col-1">
+                                                <button class="btn btn-info" type="button" data-toggle="modal"
+                                                    data-target="#CorrectTypeBom">แก้ไข</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
+<div id="CorrectTypeBom" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
+    aria-labelledby="myLargeModalLabel" style="display: none;" data-backdrop="static" data-keyboard="false"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-info">
+                    <h4 class="modal-title text-white">แก้ไขประเภท BOM</h4>
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-hidden="true">x</button>
+                </div>
+                <!-- BODY -->
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <form method="get" id="frmSearch" action="">
+                                <div class="col-12">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-1">
+                                                <div class="text-right">
+                                                    ชื่อสินค้า :
+                                                </div>
+                                            </div>
+                                            <div class="col-7">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div>
+                                                    <div class="text-right">
+                                                        ประเภท : Reject ต้นทาง
+                                                    </div>
+                                                </div>
+                                                <div class="col-2">
+                                                    <div class="text-right">
+                                                        จำนวน
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div>
+                                                        <input type="text" id="documentID" name="documentID"
+                                                            class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="col-2">
+                                                    <div class="text-right">
+                                                        หมายเหตุ :
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div>
+                                                        <input type="text" id="documentID" name="documentID"
+                                                            class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <center>
+                                    <div>
+                                        <button type="button" id="btnSearch" name="btnSearch" class="btn btn-info"
+                                            value="search">บันทึก</button>
+                                        <button class="btn btn-danger" type="button"
+                                            data-dismiss="modal">ยกเลิก</button>
+                                    </div>
+                                </center>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <div id="popupSignature" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
     aria-labelledby="myLargeModalLabel" style="display: none;" data-backdrop="static" data-keyboard="false"
@@ -95,42 +240,185 @@
                     <div class="row">
                         <div class="col-12">
                             <form method="get" id="frmSearch" action="">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-1">
-                                            <div class="text-right">
-                                                สินค้า :
+                                <div class="col-12">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div>
+                                                <div class="text-right">
+                                                    สินค้า :
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-8">
-                                            
-                                        </div>
-                                        <div class="col-3">
-                                            <button type="submit" id="btnSearch" name="btnSearch" class="btn btn-info"
-                                                value="search">ค้นหา</button>
-                                        </div>
-                                        <div class="col-1">
-                                            <div class="text-right">
-                                                สินค้า :
+                                            <div class="col-8">
+
                                             </div>
-                                        </div>
-                                        <div class="col-8">
-                                            
-                                        </div>
-                                        <div class="col-3">
-                                            <button type="submit" id="btnSearch" name="btnSearch" class="btn btn-info"
-                                                value="search">ค้นหา</button>
+                                            <div class="col-3">
+                                                <button class="btn btn-info" type="button" data-toggle="modal"
+                                                    data-target="#SearchProductBom">ค้นหา</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                
+                                <div class="col-12">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div>
+                                                <div>
+                                                    ShopOrder :
+                                                </div>
+                                            </div>
+                                            <div class="col-5">
+                                                <select id="documentTypeID" name="documentTypeID" class="form-control"
+                                                    data-style="form-control btn-secondary">
+                                                    <option value="">2701221025</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="text-right">
+                                                    จำนวนที่นำมาผลิต :
+                                                </div>
+                                            </div>
+                                            <div class="col-3">
+                                                <input type="text" id="documentID" name="documentID"
+                                                    class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div>
+                                                <div>
+                                                    ประเภท :
+                                                </div>
+                                            </div>
+                                            <div class="col-5">
+                                                <div class="demo-radio-button">
+                                                    <input name="group1" type="radio" id="radio_1" checked="">
+                                                    <label for="radio_1">ภายใน บริษัท</label>
+                                                    <input name="group1" type="radio" id="radio_2">
+                                                    <label for="radio_2">ภายนอก บริษัท</label>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div>
+                                                    บริษัท :
+                                                </div>
+                                            </div>
+                                            <div class="col-5">
+                                                <select id="documentTypeID" name="documentTypeID" class="form-control"
+                                                    data-style="form-control btn-secondary">
+                                                    <option value="">บริษัท จีเอฟพีที จำกัด (มหาชน)</option>
+                                                    <option value="">บริษัท จีเอฟฟูดส์ จำกัด (มหาชน)</option>
+                                                    <option value="">บริษัท แมคคีย์ ฟู้ด เซอร์วิสเซส</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <center>
+                                    <div>
+                                        <button type="submit" id="btnSearch" name="btnSearch" class="btn btn-info"
+                                            value="search">บันทึก</button>
+                                        <button class="btn btn-danger" type="button" data-dismiss="modal">ปิด</button>
+                                    </div>
+                                </center>
+
                             </form>
                         </div>
-                        
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-danger" data-dismiss="modal">ปิด</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="SearchProductBom" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
+    aria-labelledby="myLargeModalLabel" style="display: none;" data-backdrop="static" data-keyboard="false"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-info">
+                    <h4 class="modal-title text-white">บันทึกสินค้า BOM</h4>
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-hidden="true">x</button>
+                </div>
+                <!-- BODY -->
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <form method="get" id="frmSearch" action="">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <div class="text-right">
+                                                รหัส/ชื่อสินค้า :
+                                            </div>
+                                        </div>
+                                        <div class="col-7">
+                                            <input type="text" id="documentID" name="documentID" class="form-control">
+                                        </div>
+                                        <div class="col-3">
+                                            <button class="btn btn-info" type="button" data-toggle="modal"
+                                                data-target="#SearchProductBom">ค้นหา</button>
+                                            <button class="btn btn-danger" type="button"
+                                                data-dismiss="modal">ปิด</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table color-bordered-table info-bordered-table">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>เลิอก</th>
+                                                <th>รหัส</th>
+                                                <th>ชื่อ</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    <div class="col-1">
+                                                        <button class="btn btn-info" type="button" data-toggle="modal"
+                                                            data-target="#">เลือก</button>
+                                                    </div>
+                                                </td>
+                                                <td>005101000</td>
+                                                <td>CHICKEN C PAW (ฝากเลี้ยง)</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    <div class="col-1">
+                                                        <button class="btn btn-info" type="button" data-toggle="modal"
+                                                            data-target="#">เลือก</button>
+                                                    </div>
+                                                </td>
+                                                <td>005101001</td>
+                                                <td>CHICKEN PAW (SP) ฝากเลี้ยงฯ</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    <div class="col-1">
+                                                        <button class="btn btn-info" type="button" data-toggle="modal"
+                                                            data-target="#">เลือก</button>
+                                                    </div>
+                                                </td>
+                                                <td>005101002</td>
+                                                <td>FROZEN CHICKEN PAW (BIG BOX)</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
