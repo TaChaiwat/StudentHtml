@@ -111,3 +111,5 @@ D:\Project\StudentHtml\obj\Debug\netcoreapp3.0\Razor\Views\Bom\Index.cshtml.g.cs
 >>>>>>> 13e5fc071bb2223d4285cf5ad1631502018d11c2
 C:\StudentHtml\obj\Debug\netcoreapp3.0\Razor\Views\Bom\Index.cshtml.g.cs
 C:\StudentHtml\obj\Debug\netcoreapp3.0\Razor\Views\Example\Index.cshtml.g.cs
+D:\Workingtimes\StudentHtml\obj\Debug\netcoreapp3.0\Razor\Views\Bom\Index.cshtml.g.cs
+D:\Workingtimes\StudentHtml\obj\Debug\netcoreapp3.0\Razor\Views\Example\Index.cshtml.g.cs

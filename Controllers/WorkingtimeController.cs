@@ -20,9 +20,23 @@ namespace StudentHtml.Controllers
 
         public IActionResult Index()
         {
+
             return View();
         }
 
+        public IActionResult Edit(String ShopOrder, String Product, String Unit, String Belt, String Stime, String Etime)
+        {
+            try
+            {
+               
+                return Json(new { success = true});
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, ex = ex.Message + ex.InnerException.Message.ToString()    });
+            } 
+
+        }
 
         public IActionResult Privacy()
         {
