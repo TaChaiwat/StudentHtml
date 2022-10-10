@@ -10185,6 +10185,16 @@
   "RootNamespace": "StudentHtml",
   "Documents": [
     {
+      "FilePath": "d:\\Project\\StudentHtml\\Views\\Example\\Index.cshtml",
+      "TargetPath": "Views\\Example\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Project\\StudentHtml\\Views\\Workingtime\\Index.cshtml",
+      "TargetPath": "Views\\Workingtime\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\Project\\StudentHtml\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
@@ -10192,11 +10202,6 @@
     {
       "FilePath": "d:\\Project\\StudentHtml\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Project\\StudentHtml\\Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
     },
     {

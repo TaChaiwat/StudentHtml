@@ -1,30 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\StudentHtml\\StudentHtml.csproj": {}
+    "D:\\Project\\StudentHtml\\StudentHtml.csproj": {}
   },
   "projects": {
-    "C:\\StudentHtml\\StudentHtml.csproj": {
+    "D:\\Project\\StudentHtml\\StudentHtml.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\StudentHtml\\StudentHtml.csproj",
+        "projectUniqueName": "D:\\Project\\StudentHtml\\StudentHtml.csproj",
         "projectName": "StudentHtml",
-        "projectPath": "C:\\StudentHtml\\StudentHtml.csproj",
-        "packagesPath": "C:\\Users\\chaiwat-pong\\.nuget\\packages\\",
-        "outputPath": "C:\\StudentHtml\\obj\\",
+        "projectPath": "D:\\Project\\StudentHtml\\StudentHtml.csproj",
+        "packagesPath": "C:\\Users\\Student01-gfpt\\.nuget\\packages\\",
+        "outputPath": "D:\\Project\\StudentHtml\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\chaiwat-pong\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Student01-gfpt\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

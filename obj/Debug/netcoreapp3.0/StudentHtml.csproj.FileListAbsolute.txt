@@ -95,7 +95,6 @@ D:\Project\StudentHtml\obj\Debug\netcoreapp3.0\StudentHtml.TagHelpers.input.cach
 D:\Project\StudentHtml\obj\Debug\netcoreapp3.0\StudentHtml.TagHelpers.output.cache
 D:\Project\StudentHtml\obj\Debug\netcoreapp3.0\StudentHtml.RazorCoreGenerate.cache
 D:\Project\StudentHtml\obj\Debug\netcoreapp3.0\Razor\Views\Home\Index.cshtml.g.cs
-D:\Project\StudentHtml\obj\Debug\netcoreapp3.0\Razor\Views\Home\Privacy.cshtml.g.cs
 D:\Project\StudentHtml\obj\Debug\netcoreapp3.0\Razor\Views\Shared\Error.cshtml.g.cs
 D:\Project\StudentHtml\obj\Debug\netcoreapp3.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 D:\Project\StudentHtml\obj\Debug\netcoreapp3.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -111,3 +110,5 @@ D:\Project\StudentHtml\obj\Debug\netcoreapp3.0\Razor\Views\Bom\Index.cshtml.g.cs
 >>>>>>> 13e5fc071bb2223d4285cf5ad1631502018d11c2
 C:\StudentHtml\obj\Debug\netcoreapp3.0\Razor\Views\Bom\Index.cshtml.g.cs
 C:\StudentHtml\obj\Debug\netcoreapp3.0\Razor\Views\Example\Index.cshtml.g.cs
+D:\Project\StudentHtml\obj\Debug\netcoreapp3.0\Razor\Views\Example\Index.cshtml.g.cs
+D:\Project\StudentHtml\obj\Debug\netcoreapp3.0\Razor\Views\Workingtime\Index.cshtml.g.cs
