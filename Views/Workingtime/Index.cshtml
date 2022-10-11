@@ -123,14 +123,14 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-12 text-center">
-                            <form method="get" id="frmSearch" action="/gfpt/QD/DC/DocumentControl/DocumentControl">
+                            <form method="get" id="frmSearch" action="/Workingtime/Index">
                                 <div class="card-body">
                                     <div class="row form-group">
                                         <div class="col-1 text-right">
                                             ShopOrder
                                         </div>
                                         <div class="col-5">
-                                            <select id="expiredStatus" name="expiredStatus" class="form-control"
+                                            <select id="ShopOrder" name="expiredStatus" class="form-control"
                                                 data-style="form-control btn-secondary">
                                                 <option value="">2701221025</option>
                                             </select>
@@ -139,7 +139,7 @@
                                             สินค้า
                                         </div>
                                         <div class="col-5">
-                                            <select id="expiredStatus" name="expiredStatus" class="form-control"
+                                            <select id="Product" name="expiredStatus" class="form-control"
                                                 data-style="form-control btn-secondary">
                                                 <option value="">CHICKEN BONELESS THIGH FROZEN</option>
                                             </select>
@@ -151,7 +151,7 @@
                                         </div>
 
                                         <div class="col-5">
-                                            <select id="documentTypeID" name="documentTypeID" class="form-control"
+                                            <select id="Unit" name="documentTypeID" class="form-control"
                                                 data-style="form-control btn-secondary">
                                                 <option value="">5330 : คิริมิ</option>
                                             </select>
@@ -162,7 +162,7 @@
                                         </div>
 
                                         <div class="col-5">
-                                            <select id="departmentID" name="departmentID" class="form-control"
+                                            <select id="Belt" name="departmentID" class="form-control"
                                                 data-style="form-control btn-secondary">
                                                 <option value="R1">R1</option>
                                                 <option value="R2">R2</option>
@@ -181,7 +181,7 @@
 
                                         <div class="col-5">
                                             <div class="input-group clockpicker">
-                                                <input type="text" class="form-control" value="09:30">
+                                                <input type="text" class="form-control" id="Stime" value="09.30">
                                                 <div class="input-group-append">
                                                     <span class="input-group-text"><i class="fa fa-clock-o"></i></span>
                                                 </div>
@@ -195,7 +195,7 @@
                                         <div class="col-5">
                                             <div class="input-group clockpicker " data-placement="bottom"
                                                 data-align="top" data-autoclose="true">
-                                                <input type="text" class="form-control" value="13:14">
+                                                <input type="text" class="form-control" id="Etime" value="15.00">
                                                 <div class="input-group-append">
                                                     <span class="input-group-text"><i class="fa fa-clock-o"></i></span>
                                                 </div>
@@ -234,54 +234,53 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-12 text-center">
-                            <form method="get" id="frmSearch" action="/gfpt/QD/DC/DocumentControl/DocumentControl">
-                                <div class="card-body">
-                                    <div class="row form-group">
-                                        <div class="col-1 text-right">
-                                            ShopOrder
-                                        </div>
-                                        <div class="col-5">
-                                            2701221025
-                                        </div>
+                            <div class="card-body">
+                                <div class="row form-group">
+                                    <div class="col-1 text-right">
+                                        ShopOrder:
                                     </div>
-                                    <div class="row form-group">
-                                        <div class="col-1 text-right">
-                                            หน่วยงาน
-                                        </div>
-                                        <div class="col-5">
-                                            5330 : คิริมิ
-                                        </div>
-                                        <div class="col-1 text-right">
-                                            สายพาน
-                                        </div>
-                                        <div class="col-5">
-                                            R1
-                                        </div>
-                                        <br>
-                                    </div>
-                                    <div class="row form-group">
-                                        <div class="col-1 text-right">
-                                            รหัส/ชื่อ
-                                        </div>
-                                        <div class="col-5">
-                                            <input class="form-control" type="text" value="" id="example-text-input">
-                                        </div>
-                                        <div class="col-3">
-                                            <button type="submit" id="btnSearch" name="btnSearch" class="btn btn-info"
-                                                value="search">ค้นหา</button>
-                                            <button type="button" class="btn btn-outline-danger"
-                                                data-dismiss="modal">ปิด</button>
-                                        </div>
+                                    <div class="col-5 text-left">
+                                        2701221025
                                     </div>
                                 </div>
-                            </form>
+                                <div class="row form-group">
+                                    <div class="col-1 text-right">
+                                        หน่วยงาน:
+                                    </div>
+                                    <div class="col-5 text-left">
+                                        5330 : คิริมิ
+                                    </div>
+                                    <div class="col-1 text-right">
+                                        สายพาน:
+                                    </div>
+                                    <div class="col-5 text-left">
+                                        R1
+                                    </div>
+                                    <br>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-1 text-right">
+                                        รหัส/ชื่อ
+                                    </div>
+                                    <div class="col-5">
+                                        <input class="form-control" type="text" value="" id="Search">
+                                    </div>
+                                    <div class="col-3">
+                                        <button type="button" onclick="SearchModalTypeData()" class="btn btn-info"><i
+                                                class="fa fa-search"></i>ค้นหา</button>
+                                        <button type="button" class="btn btn-outline-danger"
+                                            data-dismiss="modal">ปิด</button>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
 
                 <div class="card-body pt-1">
                     <div class="table-responsive ">
-                        <table class="table color-bordered-table info-bordered-table">
+                        <table class="table color-bordered-table info-bordered-table" id="TableEdit">
                             <thead style="text-align: center;">
                                 <tr>
                                     <th>#</th>
@@ -306,6 +305,8 @@
                                     <td>
                                         <button class="btn btn-danger" type="button" data-toggle="modal"
                                             data-target="#edittime">แก้ไข</button>
+                                        @* <button type="button" onclick="Edit()" class="btn btn-info">แก้ไข</button> *@
+
                                     </td>
                                 </tr>
                             </tbody>
@@ -332,7 +333,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-12 text-center">
-                            <form method="get" id="frmSearch" action="/gfpt/QD/DC/DocumentControl/DocumentControl">
+                            <form method="get" id="frmSearch" action="/Workingtime/Index">
                                 <div class="card-body">
                                     <div class="row form-group">
                                         <div class="col-1 text-right">
@@ -349,7 +350,7 @@
 
                                         <div class="col-5">
                                             <div class="input-group clockpicker">
-                                                <input type="text" class="form-control" value="09:30">
+                                                <input type="text" class="form-control" id="Stimes" value="09:30">
                                                 <div class="input-group-append">
                                                     <span class="input-group-text"><i class="fa fa-clock-o"></i></span>
                                                 </div>
@@ -363,7 +364,7 @@
                                         <div class="col-5">
                                             <div class="input-group clockpicker " data-placement="bottom"
                                                 data-align="top" data-autoclose="true">
-                                                <input type="text" class="form-control" value="13:14">
+                                                <input type="text" class="form-control" id="Etimes" value="13:14">
                                                 <div class="input-group-append">
                                                     <span class="input-group-text"><i class="fa fa-clock-o"></i></span>
                                                 </div>
@@ -373,8 +374,8 @@
                                     <br>
                                     <center>
                                         <div class="col-12">
-                                            <button type="submit" id="btnSearch" name="btnSearch" class="btn btn-info"
-                                                value="search">บันทึก</button>
+
+                                            <button type="button" onclick="Save()" class="btn btn-info">บันทึก</button>
                                             <button type="button" class="btn btn-outline-danger"
                                                 data-dismiss="modal">ปิด</button>
                                         </div>
@@ -393,31 +394,97 @@
 
 
 <script>
-      function Save() {
-            function Edit(ShopOrder,Product,Unit,Belt,Stime,Etime) {
-            $("#expiredStatus").modal('show'); 
-            $("#idUsing").html(id);
-            $("#nameUsing").val(name);
-           /// $("#tbDetailUsing > tbody").empty();  
-        } 
-            var url = '/Example/Edit';
-            $.ajax({
-                type: "POST",
-                url: url,
-                data: { id: $("#idUsing").html() ,name:$("#nameUsing").val()},
-                dataType: "json",
-                beforeSend: function () { ShowLoading(); },
-                success: function (res) {
-                    if (res.success == true) {
-                        PopupMessage("บันทึกข้อมูลเรียบร้อย");
-                        $("#UsingModal").modal('hide'); 
-                    }
-                },
-                complete: function () {
-                    ShowLoading(false);
-                },
-                error: function (ex) { }
-            });
-        }
-    
-  </script>
+    function Edit(ShopOrder, Product, Unit, Belt, Stime, Etime) {
+        $("#edittime").modal('show');
+        $("#Stime").val(Stime);
+        $("#Etime").val(Etime);
+        /// $("#tbDetailUsing > tbody").empty();
+    }
+
+    function Save() {
+        var url = '/Workingtime/Edit';
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: { Stime: $("#Stime").val(), Etime: $("#Etime").val() },
+            dataType: "json",
+            beforeSend: function () { ShowLoading(); },
+            success: function (res) {
+                if (res.success == true) {
+                    PopupMessage("บันทึกข้อมูลเรียบร้อย");
+                    $("#btnAddtime").modal('hide');
+                }
+            },
+            complete: function () {
+                ShowLoading(false);
+            },
+            error: function (ex) { }
+        });
+    }
+
+    function Savetwo() {
+        var url = '/Workingtime/Savetwo';
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: { Stimes: $("#Stimes").val(), Etimes: $("#Etimes").val() },
+            dataType: "json",
+            beforeSend: function () { ShowLoading(); },
+            success: function (res) {
+                if (res.success == true) {
+                    PopupMessage("บันทึกข้อมูลเรียบร้อย");
+                    $("#edittime").modal('hide');
+                }
+            },
+            complete: function () {
+                ShowLoading(false);
+            },
+            error: function (ex) { }
+        });
+    }
+
+
+
+    function SearchModalTypeData() {
+        var url = URL + '/Workingtime/Search1';
+        var data = {
+            'Search': $("#Search").val(),
+        };
+        $("#TableEdit > tbody").empty();
+        $.ajax({
+            type: "GET",
+            url: url,
+            data: data,
+            dataType: "json",
+            beforeSend: function () {
+                ShowLoading();
+            },
+            success: function (data) {
+                var newRow = '';
+                var chk = '';
+
+                $.each(data, function (index, element) {
+                    newRow = '<tr>';
+                    newRow += '<td class="text-center">' + " " + '</td>';
+                    newRow += '<td class="text-center">' + element.id + '</td>';
+                    newRow += '<td>' + element.nameProduct + '</td>';
+                    newRow += '<td>' + element.agency + '</td>';
+                    newRow += '<td>' + element.belt + '</td>';
+                    newRow += '<td>' + element.stime + '</td>';
+                    newRow += '<td>' + element.etime + '</td>';
+                    newRow += '<td><input type="button"  onclick="Edit()" class="btn btn-danger" value="แก้ไข"></td>';
+
+                    newRow += '</tr>';
+                    $('#TableEdit > tbody').append(newRow);
+                });
+            },
+            complete: function () {
+                ShowLoading(false);
+            },
+            error: function (err) {
+                ShowLoading(false);
+            }
+        });
+    }
+
+</script>

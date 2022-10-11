@@ -18,7 +18,7 @@ namespace StudentHtml.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(String Seacrh)
         {
 
             return View();
@@ -37,6 +37,26 @@ namespace StudentHtml.Controllers
             } 
 
         }
+
+        public IActionResult Savetwo(String Stimes, String Etimes)
+        {
+            return View();
+        }
+
+        public IActionResult Search1(string Search)
+        {
+        List<Working_Header> item = new List<Working_Header>();
+            for (int i = 0; i < 5; i++)
+            { Random rnd = new Random(); 
+
+                  
+                item.Add(new Working_Header() { ID = "C1100" + i, NameProduct = "CHICKEN BONELESS THIGH FROZEN A001"+ i , Agency ="5330 : คิริมิ" , Belt ="R1" ,  Stime ="09.30" ,Etime ="15.00"});
+            }
+           
+            return Json(item);
+        }
+
+
 
         public IActionResult Privacy()
         {
