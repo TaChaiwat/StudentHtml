@@ -5,4 +5,8 @@
        public int Amount { get; set; }
        public string Type { get; set; } 
        public string Company { get; set; } 
+       public string A {get; set;} // #
+
+       public string note {get; set;}
+        public string ShopOrder {get; set;}
     }
