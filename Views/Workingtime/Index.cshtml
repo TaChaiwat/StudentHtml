@@ -99,8 +99,8 @@
                     <td>10:06</td>
                     <td>12:06</td>
                     <td>
-                        <button class="btn btn-danger" type="button" data-toggle="modal"
-                            data-target="#edit">แก้ไข</button>
+                        <button class="btn btn-danger" onclick="Edit2()" type="button"
+                            data-toggle="modal">แก้ไข</button>
                     </td>
                 </tr>
             </tbody>
@@ -181,7 +181,7 @@
 
                                         <div class="col-5">
                                             <div class="input-group clockpicker">
-                                                <input type="text" class="form-control" id="Stime" value="09.30">
+                                                <input type="text" class="form-control" id="Stimes" value="09.30">
                                                 <div class="input-group-append">
                                                     <span class="input-group-text"><i class="fa fa-clock-o"></i></span>
                                                 </div>
@@ -195,7 +195,7 @@
                                         <div class="col-5">
                                             <div class="input-group clockpicker " data-placement="bottom"
                                                 data-align="top" data-autoclose="true">
-                                                <input type="text" class="form-control" id="Etime" value="15.00">
+                                                <input type="text" class="form-control" id="Etimes" value="15.00">
                                                 <div class="input-group-append">
                                                     <span class="input-group-text"><i class="fa fa-clock-o"></i></span>
                                                 </div>
@@ -303,8 +303,8 @@
                                     <td>10:06</td>
                                     <td>12:06</td>
                                     <td>
-                                        <button class="btn btn-danger" type="button" data-toggle="modal"
-                                            data-target="#edittime">แก้ไข</button>
+                                        <button class="btn btn-danger" onclick="Edit()" type="button"
+                                            data-toggle="modal">แก้ไข</button>
                                         @* <button type="button" onclick="Edit()" class="btn btn-info">แก้ไข</button> *@
 
                                     </td>
@@ -339,8 +339,8 @@
                                         <div class="col-1 text-right">
                                             รหัส/ชื่อพนักงาน
                                         </div>
-                                        <div class="col-3 text-right">
-                                            C109398-น.ส. PHAL SENG
+                                        <div class="col-3 text-left" id="id">
+                                            C11000
                                         </div>
                                     </div>
                                     <div class="row form-group">
@@ -350,7 +350,7 @@
 
                                         <div class="col-5">
                                             <div class="input-group clockpicker">
-                                                <input type="text" class="form-control" id="Stimes" value="09:30">
+                                                <input type="text" class="form-control" id="Stime" >
                                                 <div class="input-group-append">
                                                     <span class="input-group-text"><i class="fa fa-clock-o"></i></span>
                                                 </div>
@@ -364,7 +364,7 @@
                                         <div class="col-5">
                                             <div class="input-group clockpicker " data-placement="bottom"
                                                 data-align="top" data-autoclose="true">
-                                                <input type="text" class="form-control" id="Etimes" value="13:14">
+                                                <input type="text" class="form-control" id="Etime" >
                                                 <div class="input-group-append">
                                                     <span class="input-group-text"><i class="fa fa-clock-o"></i></span>
                                                 </div>
@@ -375,7 +375,8 @@
                                     <center>
                                         <div class="col-12">
 
-                                            <button type="button" onclick="Save()" class="btn btn-info">บันทึก</button>
+                                            <button type="button" onclick="Savetwo()"
+                                                class="btn btn-info">บันทึก</button>
                                             <button type="button" class="btn btn-outline-danger"
                                                 data-dismiss="modal">ปิด</button>
                                         </div>
@@ -394,8 +395,16 @@
 
 
 <script>
-    function Edit(ShopOrder, Product, Unit, Belt, Stime, Etime) {
+    function Edit(id, Stime, Etime) {
         $("#edittime").modal('show');
+        $("#id").html(id);
+        $("#Stime").val(Stime);
+        $("#Etime").val(Etime);
+        /// $("#tbDetailUsing > tbody").empty();
+    }
+
+    function Edit2(ShopOrder, Product, Unit, Belt, Stime, Etime) {
+        $("#edit").modal('show');
         $("#Stime").val(Stime);
         $("#Etime").val(Etime);
         /// $("#tbDetailUsing > tbody").empty();
@@ -427,7 +436,7 @@
         $.ajax({
             type: "POST",
             url: url,
-            data: { Stimes: $("#Stimes").val(), Etimes: $("#Etimes").val() },
+            data: { Stimes: $("#Stime").val(), Etimes: $("#Etime").val() },
             dataType: "json",
             beforeSend: function () { ShowLoading(); },
             success: function (res) {
@@ -472,7 +481,7 @@
                     newRow += '<td>' + element.belt + '</td>';
                     newRow += '<td>' + element.stime + '</td>';
                     newRow += '<td>' + element.etime + '</td>';
-                    newRow += '<td><input type="button"  onclick="Edit()" class="btn btn-danger" value="แก้ไข"></td>';
+                    newRow += '<td><input type="button"  onclick="Edit(\'' + element.id + '\',\'' + element.stime + '\',\'' + element.etime + '\')" class="btn btn-danger" value="แก้ไข"></td>';
 
                     newRow += '</tr>';
                     $('#TableEdit > tbody').append(newRow);
@@ -486,5 +495,7 @@
             }
         });
     }
+
+
 
 </script>

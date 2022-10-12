@@ -38,10 +38,21 @@ namespace StudentHtml.Controllers
 
         }
 
-        public IActionResult Savetwo(String Stimes, String Etimes)
+        public IActionResult Savetwo(String ShopOrder, String Product, String Unit, String Belt, String Stime, String Etime)
         {
-            return View();
+            try
+            {
+               
+                return Json(new { success = true});
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, ex = ex.Message + ex.InnerException.Message.ToString()    });
+            } 
+
         }
+
+
 
         public IActionResult Search1(string Search)
         {
@@ -55,6 +66,8 @@ namespace StudentHtml.Controllers
            
             return Json(item);
         }
+        
+        
 
 
 
