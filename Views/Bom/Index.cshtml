@@ -36,11 +36,11 @@
                                                     class="form-control">
                                             </div>
                                             <div class="col-3">
-                                                <button type="submit" class="btn btn-info " onclick="SearchProductRM()"><i
-                                                        class="fa fa-search"></i>
+                                                <button type="submit" class="btn btn-info "
+                                                    onclick="SearchProductRM()"><i class="fa fa-search"></i>
                                                     ค้นหา</button>
                                                 <button class="btn btn-danger" type="button" data-toggle="modal"
-                                                    data-target="#popupSignature">เพิ่ม RM/Loss</button>
+                                                    data-target="#popupSaveProductBom">เพิ่ม RM/Loss</button>
                                             </div>
                                         </div>
                                     </div>
@@ -60,7 +60,8 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach (var item in Model) {
+                                                @foreach (var item in Model)
+                                                {
                                                     <tr>
                                                         <td>@item.A</td>
                                                         <td>@item.ID</td>
@@ -116,32 +117,20 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td></td>
-                                        <td>046707061 : KARAAGE (NAKATSU FUU SHOYU) W/P RD</td>
-                                        <td>Reject ต้นทาง kk</td>
-                                        <td>0</td>
-                                        <td></td>
-                                        <td>
-                                            <div class="col-1">
-                                                <button class="btn btn-info" type="button" data-toggle="modal"
-                                                    data-target="#CorrectTypeBom">แก้ไข</button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>046707061 : KARAAGE (NAKATSU FUU SHOYU) W/P RD</td>
-                                        <td>Reject ปลายทาง kk</td>
-                                        <td>0</td>
-                                        <td></td>
-                                        <td>
-                                            <div class="col-1">
-                                                <button class="btn btn-info" type="button" data-toggle="modal"
-                                                    data-target="#CorrectTypeBom">แก้ไข</button>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.A</td>
+                                            <td>@item.NameProduct</td>
+                                            <td>@item.TypeProduct</td>
+                                            <td>@item.Amount</td>
+                                            <td>@item.Note</td>
+                                            <td>
+                                                <button type="button" onclick="Edit('@item.NameProduct','@item.TypeProduct')"
+                                                class="btn btn-info">แก้ไข</button>
+                                            </td>
+                                        </tr>
+                                    }
                                 </tbody>
                             </table>
                         </div>
@@ -175,8 +164,10 @@
                                                     ชื่อสินค้า :
                                                 </div>
                                             </div>
-                                            <div class="col-7">
 
+                                            <div class="col-7">
+                                                <label class="control-label text-left col-4"
+                                                    id="Usingnameproduct"></label>
                                             </div>
                                         </div>
                                     </div>
@@ -185,12 +176,16 @@
                                             <div class="row">
                                                 <div>
                                                     <div class="text-right">
-                                                        ประเภท : Reject ต้นทาง
+                                                        ประเภท :
                                                     </div>
                                                 </div>
                                                 <div class="col-2">
+                                                    <label class="control-label text-left col-5"
+                                                        id="UsingType"></label>
+                                                </div>
+                                                <div class="">
                                                     <div class="text-right">
-                                                        จำนวน
+                                                        จำนวน : 
                                                     </div>
                                                 </div>
                                                 <div class="col-3">
@@ -232,7 +227,7 @@
 </div>
 
 
-<div id="popupSignature" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
+<div id="popupSaveProductBom" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
     aria-labelledby="myLargeModalLabel" style="display: none;" data-backdrop="static" data-keyboard="false"
     aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -247,96 +242,94 @@
                     <div class="row">
                         <div class="col-12">
                             @* <form method="get" id="frmSearch" action="/Bom/Index"> *@
-                                <div class="col-12">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div>
-                                                <div class="text-right">
-                                                    สินค้า :
-                                                </div>
+                            <div class="col-12">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div>
+                                            <div class="text-right">
+                                                สินค้า :
                                             </div>
-                                            <div class="col-8">
+                                        </div>
+                                        <div class="col-8">
 
-                                            </div>
-                                            <div class="col-3">
-                                                <button class="btn btn-info" type="button" data-toggle="modal"
-                                                    data-target="#SearchProductBom"> <i class="fa fa-search"></i>
-                                                    ค้นหา</button>
-                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <button class="btn btn-info" type="button" data-toggle="modal"
+                                                data-target="#SearchProductBom"> <i class="fa fa-search"></i>
+                                                ค้นหา</button>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12">
-                                    <div class="card-body">
-                                        <div class="row">
+                            </div>
+                            <div class="col-12">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div>
                                             <div>
-                                                <div>
-                                                    ShopOrder :
-                                                </div>
+                                                ShopOrder :
                                             </div>
-                                            <div class="col-5">
-                                                <select id="documentTypeID" name="documentTypeID" class="form-control"
-                                                    data-style="form-control btn-secondary">
-                                                    <option value="">2701221025</option>
-                                                </select>
+                                        </div>
+                                        <div class="col-5">
+                                            <select id="documentTypeID" name="documentTypeID" class="form-control"
+                                                data-style="form-control btn-secondary">
+                                                <option value="">2701221025</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="text-right">
+                                                จำนวนที่นำมาผลิต :
                                             </div>
-                                            <div class="col-2">
-                                                <div class="text-right">
-                                                    จำนวนที่นำมาผลิต :
-                                                </div>
-                                            </div>
-                                            <div class="col-3">
-                                                <input type="text" id="documentID" name="documentID"
-                                                    class="form-control">
-                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <input type="text" id="documentID" name="documentID" class="form-control">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12">
-                                    <div class="card-body">
-                                        <div class="row">
+                            </div>
+                            <div class="col-12">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div>
                                             <div>
-                                                <div>
-                                                    ประเภท :
-                                                </div>
+                                                ประเภท :
                                             </div>
-                                            <div class="col-5">
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio"
-                                                        name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                                                    <label class="form-check-label" for="inlineRadio1">ภายใน
-                                                        บริษัท</label>
-                                                </div>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio"
-                                                        name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                                    <label class="form-check-label" for="inlineRadio2">ภายนอก
-                                                        บริษัท</label>
-                                                </div>
+                                        </div>
+                                        <div class="col-5">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="inlineRadio1" value="option1">
+                                                <label class="form-check-label" for="inlineRadio1">ภายใน
+                                                    บริษัท</label>
                                             </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="inlineRadio2" value="option2">
+                                                <label class="form-check-label" for="inlineRadio2">ภายนอก
+                                                    บริษัท</label>
+                                            </div>
+                                        </div>
+                                        <div>
                                             <div>
-                                                <div>
-                                                    บริษัท :
-                                                </div>
+                                                บริษัท :
                                             </div>
-                                            <div class="col-5">
-                                                <select id="CompanyType" name="CompanyType" class="form-control"
-                                                    data-style="form-control btn-secondary">
-                                                    <option value="">บริษัท จีเอฟพีที จำกัด (มหาชน)</option>
-                                                    <option value="">บริษัท จีเอฟฟูดส์ จำกัด (มหาชน)</option>
-                                                    <option value="">บริษัท แมคคีย์ ฟู้ด เซอร์วิสเซส</option>
-                                                </select>
-                                            </div>
+                                        </div>
+                                        <div class="col-5">
+                                            <select id="CompanyType" name="CompanyType" class="form-control"
+                                                data-style="form-control btn-secondary">
+                                                <option value="">บริษัท จีเอฟพีที จำกัด (มหาชน)</option>
+                                                <option value="">บริษัท จีเอฟฟูดส์ จำกัด (มหาชน)</option>
+                                                <option value="">บริษัท แมคคีย์ ฟู้ด เซอร์วิสเซส</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
-                                <center>
-                                    <div>
-                                        <button type="button" class="btn btn-info"
-                                           onclick="A()">บันทึก</button> 
-                                        <button class="btn btn-danger" type="button" data-dismiss="modal">ปิด</button>
-                                    </div>
-                                </center>
+                            </div>
+                            <center>
+                                <div>
+                                    <button type="button" class="btn btn-info" onclick="SaveProductBom()">บันทึก</button>
+                                    <button class="btn btn-danger" type="button" data-dismiss="modal">ปิด</button>
+                                </div>
+                            </center>
 
                             @* </form> *@
                         </div>
@@ -371,11 +364,13 @@
                                             </div>
                                         </div>
                                         <div class="col-7">
-                                            <input type="text" id="documentID" name="documentID" class="form-control" id="EqType">
+                                            <input type="text" id="documentID" name="documentID" class="form-control"
+                                                id="EqType">
                                         </div>
                                         <div class="col-3">
                                             <button class="btn btn-info" type="button" data-toggle="modal"
-                                                data-target="" onclick="SearchModalTypeData()"> <i class="fa fa-search"></i>
+                                                data-target="" onclick="SearchProductBom()"> <i
+                                                    class="fa fa-search"></i>
                                                 ค้นหา</button>
                                             <button class="btn btn-danger" type="button"
                                                 data-dismiss="modal">ปิด</button>
@@ -385,20 +380,21 @@
                             </form>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table class="table color-bordered-table info-bordered-table" id="tblTypedataSearch">
+                                    <table class="table color-bordered-table info-bordered-table"
+                                        id="tblSearchProductBom">
                                         <thead>
                                             <tr>
-                                                <th></th>
-                                                <th>เลือก</th>
-                                                <th>รหัส</th>
-                                                <th>ชื่อ</th>
+                                                <th class="col-1">#</th>
+                                                <th class="col-1">เลือก</th>
+                                                <th class="col-5">รหัส</th>
+                                                <th class="col-4">ชื่อ</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td></td>
+                                                <td>#</td>
                                                 <td>
-                                                    <div class="col-1">
+                                                    <div>
                                                         <button class="btn btn-info" type="button" data-toggle="modal"
                                                             data-target="#">เลือก</button>
                                                     </div>
@@ -407,9 +403,9 @@
                                                 <td>CHICKEN C PAW (ฝากเลี้ยง)</td>
                                             </tr>
                                             <tr>
-                                                <td></td>
+                                                <td>#</td>
                                                 <td>
-                                                    <div class="col-1">
+                                                    <div>
                                                         <button class="btn btn-info" type="button" data-toggle="modal"
                                                             data-target="#">เลือก</button>
                                                     </div>
@@ -418,9 +414,9 @@
                                                 <td>CHICKEN PAW (SP) ฝากเลี้ยงฯ</td>
                                             </tr>
                                             <tr>
-                                                <td></td>
+                                                <td>#</td>
                                                 <td>
-                                                    <div class="col-1">
+                                                    <div>
                                                         <button class="btn btn-info" type="button" data-toggle="modal"
                                                             data-target="#">เลือก</button>
                                                     </div>
@@ -457,9 +453,12 @@
         });
     });
 
-    function Edit(amoung, note) {
+    // Edit คีย์รายละเอียดสินค้า Bom
+    function Edit(nameProduct, TypeProduct, amount, note) {
         $("#CorrectTypeBom").modal('show');
-        $("#amoungUsing").val(type);
+        $("#Usingnameproduct").html(nameProduct);
+        $("#UsingType").html(TypeProduct);
+        $("#amoungUsing").val(amount);
         $("#noteUsing").val(note);
         /// $("#tbDetailUsing > tbody").empty();  
     }
@@ -475,54 +474,46 @@
 
 
 
-function SearchModalTypeData() {
-    var url = URL + '/Bom/GetTypeDataByEQId';
-    //var arrcriteria = $("#EqType").val().split(':');
-    var data = {
-        'name': $("#EqType").val(),
-    };
-    $("#tblTypedataSearch > tbody").empty();
-    $.ajax({
-        type: "GET",
-        url: url,
-        data: data,
-        dataType: "json",
-        beforeSend: function () {
-            ShowLoading();
-        },
-        success: function (data) {
-            var newRow = '';
-          
-            $.each(data, function (index, element) {
-           
-             
-                newRow = '<tr>';
-                newRow += '<td class="text-center">' + "#" + '</td>';
-                newRow += '<td><input type = "button" onclick = "" class = "btn btn-info" value = "เลือก"></td>';
-                newRow += '<td class="text-center">' + element.id + '</td>';
-                newRow += '<td>' + element.nameProduct + '</td>';
-                newRow += '</tr>';
-                $('#tblTypedataSearch > tbody').append(newRow);
-            });
-        },
-        complete: function () {
-            ShowLoading(false);
-        },
-        error: function (err) {
-            ShowLoading(false);
-        }
-    });
-}
+    function SearchProductBom() {
+        var url = URL + '/Bom/SearchProductBom';
+        var data = {
+            'name': $("#EqType").val(),
+        };
+        $("#tblSearchProductBom > tbody").empty();
+        $.ajax({
+            type: "GET",
+            url: url,
+            data: data,
+            dataType: "json",
+            beforeSend: function () {
+                ShowLoading();
+            },
+            success: function (data) {
+                var newRow = '';
+
+                $.each(data, function (index, element) {
 
 
+                    newRow = '<tr>';
+                    newRow += '<td class = "col-1">' + "#" + '</td>';
+                    newRow += '<td class = "col-1"><input type = "button" onclick = "" class = "btn btn-info" value = "เลือก"></td>';
+                    newRow += '<td>' + element.id + '</td>';
+                    newRow += '<td>' + element.nameProduct + '</td>';
+                    newRow += '</tr>';
+                    $('#tblSearchProductBom > tbody').append(newRow);
+                });
+            },
+            complete: function () {
+                ShowLoading(false);
+            },
+            error: function (err) {
+                ShowLoading(false);
+            }
+        });
+    }
 
+    function SaveProductBom() {
 
-
-
-
-
-    function A() {
-      
         var url = '/Bom/SaveProductBom';
         $.ajax({
             type: "POST",
@@ -533,7 +524,7 @@ function SearchModalTypeData() {
             success: function (res) {
                 if (res.success == true) {
                     PopupMessage("บันทึกข้อมูลเรียบร้อย");
-                    $("#popupSignature").modal('hide');
+                    $("#popupSaveProductBom").modal('hide');
                 }
             },
             complete: function () {
@@ -541,7 +532,7 @@ function SearchModalTypeData() {
             },
             error: function (ex) { }
         });
-  
+
     }
 
     function SaveCorrectTypeBom() {
@@ -563,6 +554,7 @@ function SearchModalTypeData() {
             },
             error: function (ex) { }
         });
+
     }
 
     function SearchProductRM() {
@@ -585,7 +577,7 @@ function SearchModalTypeData() {
 
                 $.each(data, function (index, element) {
                     newRow = '<tr>';
-                    newRow += '<td class="text-center">' + "#"  + '</td>';
+                    newRow += '<td class="text-center">' + "#" + '</td>';
                     newRow += '<td class="text-center">' + element.id + '</td>';
                     newRow += '<td>' + element.nameProduct + '</td>';
                     newRow += '<td>' + element.amount + '</td>';
@@ -603,7 +595,7 @@ function SearchModalTypeData() {
             },
             error: function (err) {
                 ShowLoading(false);
-             }
+            }
         });
     }
 
@@ -627,7 +619,7 @@ function SearchModalTypeData() {
 
                 $.each(data, function (index, element) {
                     newRow = '<tr>';
-                    newRow += '<td class="text-center">' + "#"  + '</td>';
+                    newRow += '<td class="text-center">' + "#" + '</td>';
                     newRow += '<td class="text-center">' + element.id + '</td>';
                     newRow += '<td>' + element.nameProduct + '</td>';
                     newRow += '<td>' + element.amount + '</td>';
@@ -645,9 +637,7 @@ function SearchModalTypeData() {
             },
             error: function (err) {
                 ShowLoading(false);
-             }
+            }
         });
     }
-
-
 </script>

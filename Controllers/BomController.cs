@@ -18,14 +18,14 @@ namespace StudentHtml.Controllers
             _logger = logger;
         }
 
-    public IActionResult GetTypeDataByEQId(string critiria)
+    public IActionResult SearchProductBom(string name)
         {
 
             List<Bom_Index> item = new List<Bom_Index>();
 
             for (int i = 0; i < 5; i++) {
                 Random rnd = new Random();
-                item.Add(new Bom_Index() {ID = "15647" + i, NameProduct = "สิ้นค้า A00" + i});
+                item.Add(new Bom_Index() {ID = "00510100" + i, NameProduct = "สิ้นค้า A00" + i});
             }
 
             return Json(item);
@@ -39,11 +39,23 @@ namespace StudentHtml.Controllers
 
             for (int i = 0; i < 5; i++) {
                 Random rnd = new Random();
-                item.Add(new Bom_Header() {A = "#", ID = "1100" + i, NameProduct = "สิ้นค้า A00" + i, Amount = rnd.Next(1, 13), Type = "ภายนอก", Company = "Company" + i });
+                item.Add(new Bom_Header() {A = "#", ID = "27012210251" + i, NameProduct = "10025 : สิ้นค้า A00" + i, Amount = rnd.Next(1, 13), Type = "ภายนอก", Company = "Company" + i , TypeProduct = "Reject" + i});
             }
 
             return View(item);
         }
+        // public IActionResult SearchIndexProduct(string Seacrh)
+        // {
+
+        //     List<Bom_Header> item = new List<Bom_Header>();
+
+        //     for (int i = 0; i < 5; i++) {
+        //         Random rnd = new Random();
+        //         item.Add(new Bom_Header() {A = "#", ID = "2701221025", NameProduct = "10025 : สิ้นค้า A00" + i, Amount = rnd.Next(1, 13), Type = "ภายนอก", Company = "Company" + i });
+        //     }
+
+        //     return View(item);
+        // }
 
         public IActionResult Edit(string amoung,string note)
         {

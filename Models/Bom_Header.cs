@@ -7,6 +7,8 @@
        public string Company { get; set; } 
        public string A {get; set;} // #
 
-       public string note {get; set;}
+       public string Note {get; set;}
+       public string TypeProduct {get; set;}
+
         public string ShopOrder {get; set;}
     }
