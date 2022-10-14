@@ -21,11 +21,11 @@ namespace StudentHtml.Controllers
     public IActionResult SearchProductBom(string name)
         {
 
-            List<Bom_Index> item = new List<Bom_Index>();
+            List<Bom_Header> item = new List<Bom_Header>();
 
             for (int i = 0; i < 5; i++) {
                 Random rnd = new Random();
-                item.Add(new Bom_Index() {ID = "00510100" + i, NameProduct = "สิ้นค้า A00" + i});
+                item.Add(new Bom_Header() {ID = "00510100" + i, NameProduct = "สิ้นค้า A00" + i});
             }
 
             return Json(item);

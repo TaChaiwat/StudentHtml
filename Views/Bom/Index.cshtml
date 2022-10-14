@@ -32,12 +32,12 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-9">
-                                                <input type="text" id="documentID" name="documentID"
+                                                <input type="text" id="" name=""
                                                     class="form-control">
                                             </div>
                                             <div class="col-3">
                                                 <button type="submit" class="btn btn-info "
-                                                    onclick="SearchProductRM()"><i class="fa fa-search"></i>
+                                                    onclick=""><i class="fa fa-search"></i>
                                                     ค้นหา</button>
                                                 <button class="btn btn-danger" type="button" data-toggle="modal"
                                                     data-target="#popupSaveProductBom">เพิ่ม RM/Loss</button>
@@ -48,7 +48,7 @@
 
                                 <div class="card-body pt-1">
                                     <div class="table-responsive">
-                                        <table class="table color-bordered-table info-bordered-table" id="TebEdit">
+                                        <table class="table color-bordered-table info-bordered-table" id="TblProduct">
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
@@ -59,8 +59,8 @@
                                                     <th>บริษัท</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                                @foreach (var item in Model)
+                                            <tbody id="insertdata">
+                                                @* @foreach (var item in Model)
                                                 {
                                                     <tr>
                                                         <td>@item.A</td>
@@ -70,7 +70,15 @@
                                                         <td>@item.Type</td>
                                                         <td>@item.Company</td>
                                                     </tr>
-                                                }
+                                                } *@
+                                                <tr>
+                                                        <td>#</td>
+                                                        <td>123456</td>
+                                                        <td>สินค้า A0000</td>
+                                                        <td>50</td>
+                                                        <td>ภายนอก</td>
+                                                        <td>GFPT</td>
+                                                    </tr>
                                             </tbody>
                                         </table>
                                     </div>
@@ -108,7 +116,7 @@
                             <table class="table color-bordered-table info-bordered-table" id="">
                                 <thead>
                                     <tr>
-                                        <th></th>
+                                        <th>#</th>
                                         <th>ชื่อสินค้า</th>
                                         <th>ชื่อประเภท</th>
                                         <th>จำนวน</th>
@@ -190,7 +198,7 @@
                                                 </div>
                                                 <div class="col-3">
                                                     <div>
-                                                        <input type="text" id="documentID" name="documentID"
+                                                        <input type="number" min="0" id="" name=""
                                                             class="form-control">
                                                     </div>
                                                 </div>
@@ -251,7 +259,10 @@
                                             </div>
                                         </div>
                                         <div class="col-8">
-
+                                            <div class="col-7">
+                                                <label class="control-label text-left col-4"
+                                                    id="Usingnameproduct1"></label>
+                                            </div>
                                         </div>
                                         <div class="col-3">
                                             <button class="btn btn-info" type="button" data-toggle="modal"
@@ -270,7 +281,7 @@
                                             </div>
                                         </div>
                                         <div class="col-5">
-                                            <select id="documentTypeID" name="documentTypeID" class="form-control"
+                                            <select id="InputShopOrder" name="" class="form-control"
                                                 data-style="form-control btn-secondary">
                                                 <option value="">2701221025</option>
                                             </select>
@@ -281,7 +292,7 @@
                                             </div>
                                         </div>
                                         <div class="col-3">
-                                            <input type="text" id="documentID" name="documentID" class="form-control">
+                                            <input type="number" min="0" id="Inputamoung" name="documentID" class="form-control">
                                         </div>
                                     </div>
                                 </div>
@@ -294,7 +305,7 @@
                                                 ประเภท :
                                             </div>
                                         </div>
-                                        <div class="col-5">
+                                        <div class="col-5" id="inlineRadiooo">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                                     id="inlineRadio1" value="option1">
@@ -400,9 +411,9 @@
                                                     </div>
                                                 </td>
                                                 <td>005101000</td>
-                                                <td>CHICKEN C PAW (ฝากเลี้ยง)</td>
+                                                <td>สินค้า A000</td>
                                             </tr>
-                                            <tr>
+                                            @* <tr>
                                                 <td>#</td>
                                                 <td>
                                                     <div>
@@ -423,7 +434,7 @@
                                                 </td>
                                                 <td>005101002</td>
                                                 <td>FROZEN CHICKEN PAW (BIG BOX)</td>
-                                            </tr>
+                                            </tr> *@
                                         </tbody>
                                     </table>
                                 </div>
@@ -440,7 +451,6 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script>
-
 
     $(document).ready(function () {
         $("input[type=radio][name=inlineRadioOptions]").change(function () {
@@ -463,16 +473,15 @@
         /// $("#tbDetailUsing > tbody").empty();  
     }
 
-    function EditProductBom(ShopOrder, amount, type, company) {
-        $("#CorrectTypeBom").modal('show');
-        $("#ShopOrderUsing").val(ShopOrder);
+    function SelectSearchProductBom(nameProduct, amount, type, company) {
+        $("#popupSaveProductBom").modal('show');
+        $("#SearchProductBom").modal('hide');
+        $("#Usingnameproduct1").html(nameProduct);
         $("#amountUsing").val(amount);
         $("#typeUsing").val(type);
         $("#companyUsing").val(company);
         /// $("#tbDetailUsing > tbody").empty();  
     }
-
-
 
     function SearchProductBom() {
         var url = URL + '/Bom/SearchProductBom';
@@ -496,7 +505,7 @@
 
                     newRow = '<tr>';
                     newRow += '<td class = "col-1">' + "#" + '</td>';
-                    newRow += '<td class = "col-1"><input type = "button" onclick = "" class = "btn btn-info" value = "เลือก"></td>';
+                    newRow += '<td class = "col-1"><input type = "button" onclick = "SelectSearchProductBom(\'' + element.nameProduct + '\')" class = "btn btn-info" value = "เลือก"></td>';
                     newRow += '<td>' + element.id + '</td>';
                     newRow += '<td>' + element.nameProduct + '</td>';
                     newRow += '</tr>';
@@ -557,87 +566,19 @@
 
     }
 
-    function SearchProductRM() {
-        var url = '/Bom/SeacrhRM';
-        var data = {
-            'Seacrh': $("#Seacrh").val(),
-        }
-        $("#TebEdit > tbody").empty();
-        $.ajax({
-            type: "GET",
-            url: url,
-            data: data,
-            dataType: "json",
-            beforeSend: function () {
-                ShowLoading();
-            },
-            success: function (data) {
-                var newRow = '';
-                var chk = '';
+    function insertData() {
+        var nameProduct = document.getElementById("").value;
+        var ShopOrder = document.getElementById("").value;
+        var amount = document.getElementById("").value;
+        var type = document.getElementById("").value;
+        var company = document.getElementById("").value;
 
-                $.each(data, function (index, element) {
-                    newRow = '<tr>';
-                    newRow += '<td class="text-center">' + "#" + '</td>';
-                    newRow += '<td class="text-center">' + element.id + '</td>';
-                    newRow += '<td>' + element.nameProduct + '</td>';
-                    newRow += '<td>' + element.amount + '</td>';
-                    newRow += '<td>' + element.type + '</td>';
-                    newRow += '<td>' + element.company + '</td>';
-
-                    newRow += '</tr>';
-                    $('#TebEdit > tbody').append(newRow);
-
-                })
-
-            },
-            complete: function () {
-                ShowLoading(false);
-            },
-            error: function (err) {
-                ShowLoading(false);
-            }
-        });
-    }
-
-    function SeacrhProduct() {
-        var url = '/Bom/SearchProduct';
-        var data = {
-            'Seacrh': $("#Seacrh").val(),
-        }
-        $("#TebEdit > tbody").empty();
-        $.ajax({
-            type: "GET",
-            url: url,
-            data: data,
-            dataType: "json",
-            beforeSend: function () {
-                ShowLoading();
-            },
-            success: function (data) {
-                var newRow = '';
-                var chk = '';
-
-                $.each(data, function (index, element) {
-                    newRow = '<tr>';
-                    newRow += '<td class="text-center">' + "#" + '</td>';
-                    newRow += '<td class="text-center">' + element.id + '</td>';
-                    newRow += '<td>' + element.nameProduct + '</td>';
-                    newRow += '<td>' + element.amount + '</td>';
-                    newRow += '<td>' + element.type + '</td>';
-                    newRow += '<td>' + element.company + '</td>';
-
-                    newRow += '</tr>';
-                    $('#TebEdit > tbody').append(newRow);
-
-                })
-
-            },
-            complete: function () {
-                ShowLoading(false);
-            },
-            error: function (err) {
-                ShowLoading(false);
-            }
-        });
+        document.getElementById("insertdata").innerHTML += "<tr><td>" + nameProduct + "</td><td>" + ShopOrder + "</td><td>" + amount + "</td></tr>" + "</td><td>" + type + "</td><td>" + company;
+      
+        document.getElementById("Usingnameproduct1").value = "";
+        document.getElementById("InputShopOrder").value = "";
+        document.getElementById("Inputamoung").value = "";
+        document.getElementById("inlineRadiooo").value = "";
+        document.getElementById("CompanyType").value = "";
     }
 </script>
